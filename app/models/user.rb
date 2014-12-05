@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+	has_many :microposts	
 	before_save {
 		self.email=self.email.downcase
 	}
@@ -9,5 +10,4 @@ class User < ActiveRecord::Base
 		validates :password, length:{minimum: 8}
 
 	has_secure_password
-
 end
