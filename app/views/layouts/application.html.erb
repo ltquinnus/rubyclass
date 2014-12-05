@@ -13,5 +13,9 @@
      <div class="container">
     <%= yield %>
     </div>
+    <%= debug(params) if Rails.env.development? %>
+    <% if Rails.env.development?%>
+      <h1>Dev</h1>
+    <%end%>
   </body>
 </html>
